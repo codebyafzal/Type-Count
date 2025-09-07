@@ -108,7 +108,7 @@ p::selection {
     padding: 20px 20px;
 }
 
-#input {
+#input-value {
     min-height: 550px;
     max-height: 650px;
     width: 100%;
@@ -126,12 +126,12 @@ p::selection {
     background-color: var(--third-color1);
 }
 
-#input::placeholder {
+#input-value::placeholder {
     color: rgba(0, 21, 28, 0.25);
     user-select: none;
 }
 
-#input::selection {
+#input-value::selection {
     background-color: var(--primary-color1);
     color: var(--third-color1);
 }
