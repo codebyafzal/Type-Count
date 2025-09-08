@@ -8,7 +8,7 @@ const spacesResult = document.getElementById('spaces-span');
 const result = document.querySelectorAll('.result-div');
 
 
-typingArea.addEventListener('input', function(e) {
+typingArea.addEventListener('input', function() {
 
     characterCounts();
 
@@ -17,6 +17,8 @@ typingArea.addEventListener('input', function(e) {
     sentencesCount();
 
     paragraphsCount();
+
+    spacesCount();
 
 })
 
@@ -64,4 +66,18 @@ function paragraphsCount() {
     const validParagraphs = paragraphsCount.filter(p => p.trim().length > 0);
 
     paragraphsResult.textContent = validParagraphs.length;
+}
+
+//Space Counts
+function spacesCount() {
+
+    const space = typingArea.value;
+    const spacesCount = space.match(/ /g);
+
+    if(spacesCount) {
+        spacesResult.textContent = spacesCount.length;
+    } else {
+        spacesResult.textContent = 0;
+    }
+
 }
