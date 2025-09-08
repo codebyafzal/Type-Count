@@ -26,9 +26,9 @@ typingArea.addEventListener('input', function() {
 function characterCounts() {
 
     const value = typingArea.value;
-    const characterCounts = value.length;
+    const characterCounts = value.replace(/[\r\n]/g,"");
     
-    charactersResult.textContent = characterCounts;
+    charactersResult.textContent = characterCounts.length;
 }
 
 // Words Counts
