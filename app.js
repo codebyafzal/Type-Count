@@ -35,13 +35,15 @@ function characterCounts() {
 function wordsCount() {
 
     const words = typingArea.value;
-    const wordsMatch = words.match(/\b[a-zA-Z0-9]+\b/g);
+    const wordsMatch = words.match(/\b[a-zA-Z]+(?:-[a-zA-Z]+)*\b/g);
 
     if(wordsMatch) {
         wordsResult.textContent = wordsMatch.length;
     } else {
         wordsResult.textContent = 0;
     }
+
+    console.log(wordsMatch);
 }
 
 // Sentences Counts
