@@ -14,7 +14,7 @@ typingArea.addEventListener('input', function() {
 
     wordsCount();
 
-    sentencesCount()
+    sentencesCount();
 
 })
 
