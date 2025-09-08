@@ -10,13 +10,39 @@ const result = document.querySelectorAll('.result-div');
 
 typingArea.addEventListener('input', function() {
 
-    const value = typingArea.value;
-    const length = value.length;
+    characterCounts();
 
-    // Characters Count
-    charactersResult.textContent = length;
+    wordsCount();
 
-    //Words Count
-
+    sentencesCount()
 
 })
+
+// Characters Counts
+function characterCounts() {
+
+    const value = typingArea.value;
+    const characterCounts = value.length;
+    
+    charactersResult.textContent = characterCounts;
+}
+
+// Words Counts
+function wordsCount() {
+
+    const words = typingArea.value;
+    const wordsMatch = words.match(/\b[a-zA-Z0-9]+\b/g);
+
+    wordsResult.textContent = wordsMatch ? wordsMatch.length : 0;
+
+}
+
+// Sentences Counts
+function sentencesCount() {
+    
+    const sentences = typingArea.value;
+    const sentencesCount = sentences.match(/\./g);
+
+
+    sentencesResult.textContent = sentencesCount ? sentencesCount.length : 0;
+}
