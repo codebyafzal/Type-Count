@@ -33,8 +33,11 @@ function wordsCount() {
     const words = typingArea.value;
     const wordsMatch = words.match(/\b[a-zA-Z0-9]+\b/g);
 
-    wordsResult.textContent = wordsMatch ? wordsMatch.length : 0;
-
+    if(wordsMatch) {
+        wordsResult.textContent = wordsMatch.length;
+    } else {
+        wordsResult.textContent = 0;
+    }
 }
 
 // Sentences Counts
@@ -44,5 +47,9 @@ function sentencesCount() {
     const sentencesCount = sentences.match(/\./g);
 
 
-    sentencesResult.textContent = sentencesCount ? sentencesCount.length : 0;
+    if(sentencesCount) {
+        sentencesResult.textContent = sentencesCount.length;
+    } else {
+        sentencesResult.textContent = 0;
+    }
 }
