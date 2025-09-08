@@ -8,13 +8,15 @@ const spacesResult = document.getElementById('spaces-span');
 const result = document.querySelectorAll('.result-div');
 
 
-typingArea.addEventListener('input', function() {
+typingArea.addEventListener('input', function(e) {
 
     characterCounts();
 
     wordsCount();
 
     sentencesCount();
+
+    paragraphsCount();
 
 })
 
@@ -52,4 +54,14 @@ function sentencesCount() {
     } else {
         sentencesResult.textContent = 0;
     }
+}
+
+// Paragraph Counts
+function paragraphsCount() {
+
+    const paragraph = typingArea.value;
+    const paragraphsCount = paragraph.trim().split(/\n+/);
+    const validParagraphs = paragraphsCount.filter(p => p.trim().length > 0);
+
+    paragraphsResult.textContent = validParagraphs.length;
 }
