@@ -43,7 +43,6 @@ function wordsCount() {
         wordsResult.textContent = 0;
     }
 
-    console.log(wordsMatch);
 }
 
 // Sentences Counts
@@ -64,7 +63,7 @@ function sentencesCount() {
 function paragraphsCount() {
 
     const paragraph = typingArea.value;
-    const paragraphsCount = paragraph.trim().split(/\n+/);
+    const paragraphsCount = paragraph.trim().split(/\n\s*\n/);
     const validParagraphs = paragraphsCount.filter(p => p.trim().length > 0);
 
     paragraphsResult.textContent = validParagraphs.length;
